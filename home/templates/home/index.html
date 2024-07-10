@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<h1>Djnago tut--- response comming from templates</h1>
+
+<a href="/contact/">contact</a>
+<a href="/about/">about</a>
+<a href="">home</a>
+{{people}}
+
+<table>
+    <tr>
+        <th>S.NO</th>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+    {% for people in people %}
+    <tr>
+        <td>{{ forloop.counter}}</td>
+      <td>{{ people.name}}</td>
+      <td>
+        {% if people.age >= 18 %}
+        <h2>You Can Vote</h2>
+        {% else %}
+        <h2>You Cannot Vote</h2>
+        {% endif %}
+      </td>
+      
+
+      
+    </tr>
+    {% endfor %}
+    
+
+  </table>
+  {{text|truncatechars:50}}
+<br>
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iste vitae reprehenderit quo. Aliquid dolor nesciunt ea, atque error reiciendis, similique, iusto laboriosam necessitatibus minima officia voluptates voluptatibus! Eos, maiores!
+{% endblock %}
