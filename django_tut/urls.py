@@ -29,6 +29,9 @@ urlpatterns = [
     path('success/', success_page, name='success_page'),
     path('contact/', contact, name='success_page'),
     path('about/', about, name='success_page'),
+    path('login/', login_page, name='login_page'),
+    path('logout/', logout_page, name='logout_page'),
+    path('signup/', signup_page, name='signup_page'),
     path('admin/', admin.site.urls),
 ]
 
